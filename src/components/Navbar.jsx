@@ -1,14 +1,16 @@
 import React, {Fragment} from "react";
 import {Link} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Navbar(){
 
+    const history = useHistory();
+
     const scroll=(e)=>{
-   
-        document.getElementById(`${e.target.name}`).scrollIntoView({behavior:"smooth"})
-
+        history.push('/');
+        // document.getElementById(`${e.target.name}`).scrollIntoView({behavior:"smooth"})
+        
     }
-
  
 return(
   <Fragment>
@@ -25,7 +27,7 @@ return(
                     <button name="main-section" className="navbtn" onClick={scroll}>Home</button>
                        
                     </li>
-                    <li>
+                    {/* <li>
                     <button name="about-section" className="navbtn" onClick={scroll}>About</button>
                     
                     </li>
@@ -40,10 +42,26 @@ return(
                     </li>
                     <li>
                         <button name="contact-section" className="navbtn" onClick={scroll}>Contact</button>
-                    </li>
+                    </li> */}
                     <li>
                         <a className="navbtn" href="/alumni">
                         Alumni
+                        </a>
+                    </li>
+                    <li>
+                        <a className="navbtn" href="/AddProject">
+                        Add Project
+                        </a>
+                    </li>
+                    <li>
+                        <a className="navbtn" href="/ProjectList">
+                        Project List
+                        </a>
+                    </li>
+
+                    <li>
+                        <a className="navbtn" href="/ProjectDetails">
+                        Project Details
                         </a>
                     </li>
                    
